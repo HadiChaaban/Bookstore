@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
     
@@ -9,11 +10,15 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=0)
     year = models.DecimalField(max_digits=4, decimal_places=0)
     genre = models.CharField(max_length=30)
-    slug = models.SlugField(max_length=255, default="Unknown")
+    slug = models.SlugField(max_length=255, default="unknown")
+    image = models.ImageField(upload_to='images/', default= 'images/default.jpg')
 
     class Meta:
         verbose_name_plural = 'Books'
         ordering = ('-user_rating',)
+
+    def get_absolute_url(self):
+        return reverse('store:product_detail', args=[self.slug])
 
     def _str_(self):
         return self.title

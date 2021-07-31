@@ -5,21 +5,21 @@
 
 <main>
 
-    <div class="bg-dark text-secondary px-4 py-5 text-center">
+  <div class="bg-dark text-secondary px-4 py-5 text-center">
     <div class="py-5">
       <h1 class="display-5 fw-bold text-white">paperback.</h1>
       <div class="col-lg-6 mx-auto">
         <p class="fs-5 mb-4">leading in getting you the books you love, fast.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <form action="{% url 'store:searchbar' %}" method="get">
-            <input type="text" name = "search"/>
+            <input type="text" name="search" />
             <button type="submit">Search</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-  
+
 
   <div class="album py-5 bg-light">
     <div class="container">
@@ -34,6 +34,7 @@
             <div class="card-body">
               <p class="card-text">
                 <a class="text-dark text-decoration-none" href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                <div align="right" class="pb-1 h5">${{ book.price }}</div>
               </p>
               <div class="d-flex justify-content-between align-items-center">
               </div>

@@ -1,0 +1,57 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+
+<main>
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">paperback.</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">leading in getting you the books you love, fast.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <form action="{% url 'store:searchbar' %}" method="get">
+                        <input type="text" name="search" />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            {% if books %}
+            <div class="pb-3 h5">Search Results</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                {% for book in books %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img class="img-fluid" alt="Responsive image" src="{{ book.image.url }}">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <a class="text-dark text-decoration-none"
+                                    href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                {% else %}
+                <div class="pb-3 h5">Nothing Found</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+
+
+{% endblock %}

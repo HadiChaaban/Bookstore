@@ -53,3 +53,7 @@ py manage.py runserver
 
 Give it a second, and it should load the fully functional server! It will tell you the local address to put into your web browser to test it out. It should be: http://127.0.0.1:8000/
 
+
+To go to the ADMIN DASHBOARD, type the local address and put /admin. For example http://127.0.0.1:8000/admin
+There already is a superuser with username "admin" and password "admin".
+In the Admin Dashboard, you will be able to manually create, edit, and delete entries in the database for Books.

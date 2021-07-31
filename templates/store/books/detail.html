@@ -28,12 +28,10 @@
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
-                                    <option value="">4</option>
                                 </select>
 
                             </div>
-                            <div class="col-6 text-end"><button type="button" class="btn btn-secondary btn-sm">Add to
-                                    cart</button></div>
+                            <button type="button" id="add-button" value="{{book.id}}" class="btn btn-secondary btn-sm">Add to cart</button></div>
                         </div>
                     </div>
                 </div>
@@ -42,4 +40,23 @@
     </main>
 
 </div>
+
+<script>
+    $(document).on('click', '#add-button', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '{% url "cart:cart_add" %}',
+            data: {
+                bookid: $('#add-button').val(),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (json) {
+            },
+            error: function (xhr, errmsg, err) {}
+        });
+    })
+</script>
+
 {% endblock %}

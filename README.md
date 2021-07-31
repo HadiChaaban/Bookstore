@@ -26,12 +26,30 @@ Make sure Python 3.9.5 is installed on your computer.
 
 WINDOWS ONLY:
 Open Visual Studio Code
-Go to File -> Open Folder...
-Open the Bookstore-main folder
-If prompted to trust authors, click trust authors
-Open the terminal using Ctrl + '
 
-'''
+Go to File -> Open Folder...
+
+Open the Bookstore-main folder
+
+If prompted to trust authors, click trust authors
+
+Open the terminal using Ctrl + ' and type:
+
+```
 venv\Scripts\activate
-'''
+```
+If you get a signature error, type this, then try again: 
+
+```
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+It should now say (venv) before your directory. venv is just a folder storing the virtual environment!
+
+To run the server, type:
+```
+py manage.py runserver
+```
+
+Give it a second, and it should load the fully functional server! It will tell you the local address to put into your web browser to test it out. It should be: http://127.0.0.1:8000/
+

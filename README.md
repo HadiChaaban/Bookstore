@@ -1,5 +1,8 @@
 # Project Information
 
+## DEMO VIDEO
+https://user-images.githubusercontent.com/87607836/127737352-4d6b463d-7531-4c7c-a800-f233b8a4eb5c.mp4
+
 This project is a webapp based off of Django Python.
 
 It is a prototype bookstore that allows for searching a catalog of books, looking at individual books, and put books into a cart.
@@ -57,3 +60,7 @@ Give it a second, and it should load the fully functional server! It will tell y
 To go to the ADMIN DASHBOARD, type the local address and put /admin. For example http://127.0.0.1:8000/admin
 There already is a superuser with username "admin" and password "admin".
 In the Admin Dashboard, you will be able to manually create, edit, and delete entries in the database for Books.
+
+
+
+
